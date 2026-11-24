@@ -3,92 +3,198 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Samia ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samia ❤️ My Universe</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
- min-height:100vh;overflow:hidden;
- display:flex;align-items:center;justify-content:center;
+ height:100vh;
+ overflow:hidden;
+ display:flex;
+ align-items:center;
+ justify-content:center;
  flex-direction:column;
- background:radial-gradient(circle,#420c2b,#190817,#050208);
- font-family:Georgia,serif;color:white;
+ background:
+ radial-gradient(ellipse at 50% 45%,#36145b 0%,#17112f 38%,#080b20 75%,#030611 100%);
+ color:white;
+ font-family:Georgia,serif;
 }
-.glow{
- position:absolute;width:300px;height:300px;
- background:#ff176b;filter:blur(120px);opacity:.35;
+
+body:before,body:after{
+ content:"";
+ position:fixed;
+ width:70vw;height:70vw;
+ border-radius:50%;
+ filter:blur(100px);
+ opacity:.22;
+ pointer-events:none;
 }
+body:before{
+ background:#a52cff;
+ top:-35%;left:-25%;
+}
+body:after{
+ background:#ff2d91;
+ bottom:-40%;right:-25%;
+}
+
+.stars{
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ background-image:
+ radial-gradient(2px 2px at 20% 30%,white,transparent),
+ radial-gradient(2px 2px at 70% 20%,#ffbce0,transparent),
+ radial-gradient(1px 1px at 45% 70%,white,transparent),
+ radial-gradient(2px 2px at 85% 80%,#d9b5ff,transparent),
+ radial-gradient(1px 1px at 10% 85%,white,transparent);
+ background-size:180px 180px;
+ animation:twinkle 4s ease-in-out infinite alternate;
+}
+
 .heart{
- position:relative;width:min(78vw,350px);
- animation:beat 1.3s infinite;
- filter:drop-shadow(0 0 22px #ff2878);
+ position:relative;
+ width:min(82vw,370px);
+ opacity:0;
+ transform:scale(.3);
+ animation:heartAppear 2s ease .5s forwards,
+ heartbeat 2s ease-in-out 2.5s infinite;
+ filter:drop-shadow(0 0 15px #ff55bd)
+        drop-shadow(0 0 35px #a52cff);
 }
-.heart svg{width:100%;display:block}
+
+.heart svg{width:100%;display:block;overflow:visible}
+
 .name{
- position:absolute;top:47%;left:50%;
+ position:absolute;
+ top:47%;left:50%;
  transform:translate(-50%,-50%);
- font-size:clamp(28px,8vw,43px);
- font-weight:bold;letter-spacing:4px;
- text-shadow:0 0 12px #ff8ab6,0 0 25px #ff176b;
+ font-size:clamp(29px,8vw,45px);
+ font-weight:bold;
+ letter-spacing:5px;
+ white-space:nowrap;
+ color:#fff;
+ opacity:0;
+ text-shadow:0 0 10px #fff,
+             0 0 22px #ff60c9,
+             0 0 40px #a52cff;
+ animation:nameAppear 1.7s ease 2s forwards;
 }
+
 .love{
- margin-top:35px;font-size:clamp(23px,6vw,32px);
- letter-spacing:4px;color:#ffd5e4;
- text-shadow:0 0 15px #ff438b;
- animation:shine 2s infinite;
+ margin-top:30px;
+ font-size:clamp(23px,6vw,33px);
+ letter-spacing:5px;
+ color:#ffd9f1;
+ opacity:0;
+ text-shadow:0 0 15px #ff55bd;
+ animation:textAppear 1.5s ease 3s forwards,
+ shine 2s ease-in-out 4.5s infinite;
 }
+
 .caption{
- margin-top:14px;font:13px Arial,sans-serif;
- letter-spacing:3px;color:#e8a9c2;
+ margin-top:15px;
+ font:12px Arial,sans-serif;
+ letter-spacing:4px;
+ color:#cdb7ff;
+ opacity:0;
+ animation:textAppear 1.5s ease 3.7s forwards;
 }
+
 .petal{
- position:fixed;top:-30px;width:13px;height:19px;
+ position:fixed;
+ top:-30px;
+ width:13px;height:19px;
  border-radius:90% 0 90% 0;
- background:linear-gradient(135deg,#ffd0df,#fa347b,#9d123f);
- animation:fall linear infinite;pointer-events:none;
+ background:linear-gradient(135deg,#fff0fb,#ff64b7,#9e3bff);
+ opacity:.8;
+ animation:fall linear infinite;
+ pointer-events:none;
 }
-@keyframes beat{
+
+@keyframes heartAppear{
+ to{opacity:1;transform:scale(1)}
+}
+@keyframes nameAppear{
+ from{opacity:0;filter:blur(12px);letter-spacing:18px}
+ to{opacity:1;filter:blur(0);letter-spacing:5px}
+}
+@keyframes textAppear{
+ to{opacity:1;transform:translateY(0)}
+}
+@keyframes heartbeat{
  0%,100%{transform:scale(1)}
- 15%{transform:scale(1.07)}
+ 15%{transform:scale(1.045)}
  30%{transform:scale(1)}
- 45%{transform:scale(1.04)}
+ 45%{transform:scale(1.03)}
  60%{transform:scale(1)}
 }
-@keyframes shine{50%{opacity:.65}}
+@keyframes shine{
+ 50%{text-shadow:0 0 25px #ff55bd,0 0 45px #a52cff}
+}
+@keyframes twinkle{
+ from{opacity:.45}
+ to{opacity:1}
+}
 @keyframes fall{
- to{transform:translate(40px,110vh) rotate(720deg)}
+ to{transform:translate(50px,110vh) rotate(720deg)}
 }
 </style>
 </head>
+
 <body>
 
-<div class="glow"></div>
+<div class="stars"></div>
 
 <div class="heart">
- <svg viewBox="0 0 200 180">
+ <svg viewBox="0 0 240 220">
   <defs>
-   <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#ff91b9"/>
-    <stop offset="50%" stop-color="#ed1c64"/>
-    <stop offset="100%" stop-color="#8d073e"/>
+   <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#ffb5e5"/>
+    <stop offset="35%" stop-color="#ff4eac"/>
+    <stop offset="70%" stop-color="#a33bff"/>
+    <stop offset="100%" stop-color="#5014a0"/>
+   </linearGradient>
+   <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity=".8"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
    </linearGradient>
   </defs>
-  <path d="M100 166 C82 149 12 105 12 57 C12 17 62 4 100 45 C138 4 188 17 188 57 C188 105 118 149 100 166Z"
-   fill="url(#red)" stroke="#ff8bb5" stroke-width="2"/>
+
+  <path
+   d="M120 205 C100 180 15 125 15 68
+   C15 15 83 3 120 55
+   C157 3 225 15 225 68
+   C225 125 140 180 120 205Z"
+   fill="url(#glass)"
+   stroke="#ffd1f0"
+   stroke-width="3"
+  />
+
+  <path
+   d="M35 65 C40 28 77 23 99 48"
+   fill="none"
+   stroke="url(#shine)"
+   stroke-width="5"
+   stroke-linecap="round"
+  />
  </svg>
+
  <div class="name">SAMIA</div>
 </div>
 
 <div class="love">I LOVE YOU</div>
-<div class="caption">WITH ALL MY HEART</div>
+<div class="caption">YOU ARE MY UNIVERSE</div>
 
 <script>
-for(let i=0;i<30;i++){
+for(let i=0;i<35;i++){
  const p=document.createElement("div");
  p.className="petal";
  p.style.left=Math.random()*100+"vw";
- p.style.animationDuration=(7+Math.random()*12)+"s";
- p.style.animationDelay=(-Math.random()*15)+"s";
+ p.style.animationDuration=(8+Math.random()*12)+"s";
+ p.style.animationDelay=(-Math.random()*18)+"s";
  document.body.appendChild(p);
 }
 </script>
