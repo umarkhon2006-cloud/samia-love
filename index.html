@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Samia ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ min-height:100vh;overflow:hidden;
+ display:flex;align-items:center;justify-content:center;
+ flex-direction:column;
+ background:radial-gradient(circle,#420c2b,#190817,#050208);
+ font-family:Georgia,serif;color:white;
+}
+.glow{
+ position:absolute;width:300px;height:300px;
+ background:#ff176b;filter:blur(120px);opacity:.35;
+}
+.heart{
+ position:relative;width:min(78vw,350px);
+ animation:beat 1.3s infinite;
+ filter:drop-shadow(0 0 22px #ff2878);
+}
+.heart svg{width:100%;display:block}
+.name{
+ position:absolute;top:47%;left:50%;
+ transform:translate(-50%,-50%);
+ font-size:clamp(28px,8vw,43px);
+ font-weight:bold;letter-spacing:4px;
+ text-shadow:0 0 12px #ff8ab6,0 0 25px #ff176b;
+}
+.love{
+ margin-top:35px;font-size:clamp(23px,6vw,32px);
+ letter-spacing:4px;color:#ffd5e4;
+ text-shadow:0 0 15px #ff438b;
+ animation:shine 2s infinite;
+}
+.caption{
+ margin-top:14px;font:13px Arial,sans-serif;
+ letter-spacing:3px;color:#e8a9c2;
+}
+.petal{
+ position:fixed;top:-30px;width:13px;height:19px;
+ border-radius:90% 0 90% 0;
+ background:linear-gradient(135deg,#ffd0df,#fa347b,#9d123f);
+ animation:fall linear infinite;pointer-events:none;
+}
+@keyframes beat{
+ 0%,100%{transform:scale(1)}
+ 15%{transform:scale(1.07)}
+ 30%{transform:scale(1)}
+ 45%{transform:scale(1.04)}
+ 60%{transform:scale(1)}
+}
+@keyframes shine{50%{opacity:.65}}
+@keyframes fall{
+ to{transform:translate(40px,110vh) rotate(720deg)}
+}
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<div class="heart">
+ <svg viewBox="0 0 200 180">
+  <defs>
+   <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#ff91b9"/>
+    <stop offset="50%" stop-color="#ed1c64"/>
+    <stop offset="100%" stop-color="#8d073e"/>
+   </linearGradient>
+  </defs>
+  <path d="M100 166 C82 149 12 105 12 57 C12 17 62 4 100 45 C138 4 188 17 188 57 C188 105 118 149 100 166Z"
+   fill="url(#red)" stroke="#ff8bb5" stroke-width="2"/>
+ </svg>
+ <div class="name">SAMIA</div>
+</div>
+
+<div class="love">I LOVE YOU</div>
+<div class="caption">WITH ALL MY HEART</div>
+
+<script>
+for(let i=0;i<30;i++){
+ const p=document.createElement("div");
+ p.className="petal";
+ p.style.left=Math.random()*100+"vw";
+ p.style.animationDuration=(7+Math.random()*12)+"s";
+ p.style.animationDelay=(-Math.random()*15)+"s";
+ document.body.appendChild(p);
+}
+</script>
+
+</body>
+</html>
